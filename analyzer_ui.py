@@ -29,7 +29,7 @@ class AnalyzerUI(tk.Tk):
 
     def build_labelframe(self):
         self.labelframe = ttk.LabelFrame(self, labelanchor="w")
-        self.labelframe.grid(row=0, column=0)
+        self.labelframe.grid(row=0, column=0, sticky="n")
 
     def build_comboboxs(self):
         self.year_cbb_var = tk.StringVar(value="Select Year")
