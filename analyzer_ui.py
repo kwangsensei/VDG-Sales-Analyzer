@@ -22,6 +22,7 @@ class AnalyzerUI(tk.Tk):
         self.build_labelframe()
         self.build_comboboxs()
         self.build_buttons()
+        self.build_progress_bar()
         self.figure = Figure(figsize=(7, 5))
         self.axes = self.figure.add_subplot()
         self.figure_canvas = FigureCanvasTkAgg(self.figure, self)
@@ -66,13 +67,6 @@ class AnalyzerUI(tk.Tk):
         self.country_cbb.grid(row=3, column=0)
 
     def build_buttons(self):
-        self.pro_bar = ttk.Progressbar(
-            self.labelframe,
-            orient="horizontal",
-            mode="determinate",
-            length=142
-            )
-        self.pro_bar.grid(row=4, column=0)
         self.reset_all_button = tk.Button(
             self.labelframe, 
             text="Reset All",
@@ -103,6 +97,15 @@ class AnalyzerUI(tk.Tk):
         self.reset_publisher_button.grid(row=2, column=1)
         self.reset_country_button.grid(row=3, column=1)
         self.show_button.grid(row=5, column=1)
+
+    def build_progress_bar(self):
+        self.pro_bar = ttk.Progressbar(
+            self.labelframe,
+            orient="horizontal",
+            mode="determinate",
+            length=142
+            )
+        self.pro_bar.grid(row=4, column=0)
 
     def filter(self):
         country_list = list([
