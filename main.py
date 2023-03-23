@@ -6,4 +6,3 @@ if __name__ == "__main__":
     analyzer = Analyzer()
     ui = AnalyzerUI(analyzer)
     ui.run()
-    
