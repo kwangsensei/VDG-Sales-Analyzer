@@ -1,8 +1,10 @@
-from analyzer import Analyzer
-from analyzer_ui import AnalyzerUI
+"""
+This Main module is responsible for running the application.
+"""
+from window_gui import WindowGUI
 
-if __name__ == "__main__":
-    """Run the program."""
-    analyzer = Analyzer()
-    ui = AnalyzerUI(analyzer)
-    ui.run()
+
+class Main:
+    """Run the application."""
+    app = WindowGUI()
+    app.mainloop()

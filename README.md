@@ -1,25 +1,40 @@
 # Video Game Sales Analyzer
-
+ 
 ## Description
-The application can analyze the sales of the video game data since 2000 - 2010. The user must be select year to analyzing data from selected year and user can select publisher name and/or country that games sale from. Then the data will be display as bar graph like picture below. Please note that year must be selected.
+This application allows users to analyze video game sales data from 1980 to 2020. Please select the desired values from the provided comboboxes and click the "Graph" button to generate and visualize the corresponding graph. Please note that there may be missing data for certain years as the data source may not have records for those years.
 
-<img src="app.png">
+This is the GUI of the application:
+<img src="app_gui.png">
 
-Demo Clip
-https://youtu.be/iUsl-jlKlwA
+[Click here to watch demonstrate](https://youtu.be/XHIWnEcrNj0)
 
+## Data Sources
+This application exclusively utilizes the CSV file named ```vgsales.csv``` to analyze the data.
+
+```vgsales.csv``` contains the sales records of video games, including information such as the publisher, genre, release year, and total sales in various regions from 1980 to 2020.
+
+[Click here to see data source](https://www.kaggle.com/datasets/gregorut/videogamesales)
+ 
 ## Running the Application
-Pandas: To create DataFrame by pandas.read_csv().
-Seaborn: To plot graph by barplot().
-    
+Any dependencies (packages) needed to run your program and how to run it.
+ 
 ## Design
-Application's UI design by let user choose what year user want to look and then user can be more deep access by choosing publisher or counrtry or both. When user finish choosing topic to analyze, press "Show" button to display bar graph. There are reset buttons so user can quickly change the POV of data easier I added progess bar to tell user that data is analyzing.
+The design of this application allows users to determine how the data is visualized by selecting a value from a dropdown menu and clicking a button to generate the corresponding graph. The application also includes a progress bar to indicate that the application is functioning correctly. In the event that no value has been selected from the dropdown menu, users can still click the button to view the default graph provided by the application.
 
-<img src="uml.png">
+This is the UML Class Diagram of the application:
+<img src="UML.png">
+
+And this is the Sequence Diagram of the application:
+<img src="sequence.png">
 
 ## Design Patterns Used
-State Pattern: To check what combobox being selected.
-Observer Pattern: To use with buttons that occur some actions.
+* ***Facade Pattern***
+    * I use this pattern to retrieve the data frame from the logic layer and return it to the presentation layer for plot the graph.
+ 
+## Graph Algorithm Used
+The part of the application that is modeled as a graph problem is finding the top influential games based on their sales performance across different platforms. This can be solved using the PageRank algorithm, which is a graph algorithm used to assign importance scores to vertices based on the structure of the graph and the weights of the edges.
+
+To find the top influential games, the PageRank algorithm is applied to the graph. The algorithm works by iteratively assigning importance scores to each vertex based on the scores of its neighboring vertices. The process continues until convergence, where the scores stabilize.
  
 ## Other Information
 Anything else you would like to include. Anything you think is important or interesting that you learned. For example, any interesting libraries or packages you use in your application.

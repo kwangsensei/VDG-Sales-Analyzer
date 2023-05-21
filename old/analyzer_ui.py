@@ -17,8 +17,8 @@ class AnalyzerUI(tk.Tk):
         super().__init__()
         self.analyzer = analyzer
         self.init_components()
-        self.state = self.plot_graph
-        
+        # self.state = self.plot_graph
+
     def init_components(self):
         """Initialize components of UI."""
         self.title("Video Game Sales Analyzer")
@@ -27,7 +27,7 @@ class AnalyzerUI(tk.Tk):
         self.build_buttons()
         self.build_progress_bar()
         self.figure = Figure(figsize=(7, 5))
-        self.axes = self.figure.add_subplot()
+        self.axes = self.figure.add_subplot(111)
         self.figure_canvas = FigureCanvasTkAgg(self.figure, self)
         self.figure_canvas.get_tk_widget().grid(row=0, column=2)
 
@@ -127,7 +127,7 @@ class AnalyzerUI(tk.Tk):
         self.year_cbb.set("Select Year")
         self.publisher_cbb.set("Select Publisher")
         self.country_cbb.set("Global_Sales")
-        self.pro_bar["value"] -= self.pro_bar["value"]
+        # self.pro_bar["value"] -= self.pro_bar["value"]
 
     def reset_year_filter(self, event):
         """
@@ -139,7 +139,7 @@ class AnalyzerUI(tk.Tk):
         notice = event.widget["text"]
         print(f"{notice} year button pressed")
         self.year_cbb.set("Select Year")
-        self.pro_bar["value"] -= self.pro_bar["value"]
+        # self.pro_bar["value"] -= self.pro_bar["value"]
 
     def reset_publisher_filter(self, event):
         """
@@ -151,7 +151,7 @@ class AnalyzerUI(tk.Tk):
         notice = event.widget["text"]
         print(f"{notice} publisher button pressed")
         self.publisher_cbb.set("Select Publisher")
-        self.pro_bar["value"] -= self.pro_bar["value"]
+        # self.pro_bar["value"] -= self.pro_bar["value"]
 
     def reset_country_filter(self, event):
         """
@@ -163,7 +163,7 @@ class AnalyzerUI(tk.Tk):
         notice = event.widget["text"]
         print(f"{notice} country button pressed")
         self.country_cbb.set("Global_Sales")
-        self.pro_bar["value"] -= self.pro_bar["value"]
+        # self.pro_bar["value"] -= self.pro_bar["value"]
 
     def plot_graph(self):
         """
@@ -240,17 +240,17 @@ class AnalyzerUI(tk.Tk):
         self.figure.canvas.draw()
         self.pro_bar["value"] -= self.pro_bar["value"]
 
-    def state_pattern(self, cbb_state, event):
-        """State Pattern."""
-        if cbb_state == self.year_cbb:
-            self.state = self.plot_graph
-        if cbb_state == self.year_cbb and self.publisher_cbb:
-            self.state = self.plot_graph
-        if cbb_state == self.year_cbb and self.country_cbb:
-            self.state = self.plot_graph
-        if cbb_state == self.year_cbb and self.publisher_cbb and self.country_cbb:
-            self.state = self.plot_graph
-        self.state()
+    # def state_pattern(self, cbb_state, event):
+    #     """State Pattern."""
+    #     if cbb_state == self.year_cbb:
+    #         self.state = self.plot_graph
+    #     if cbb_state == self.year_cbb and self.publisher_cbb:
+    #         self.state = self.plot_graph
+    #     if cbb_state == self.year_cbb and self.country_cbb:
+    #         self.state = self.plot_graph
+    #     if cbb_state == self.year_cbb and self.publisher_cbb and self.country_cbb:
+    #         self.state = self.plot_graph
+    #     self.state()
 
     def run(self):
         """Start the app."""
