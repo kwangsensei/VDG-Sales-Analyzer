@@ -6,8 +6,6 @@ This application allows users to analyze video game sales data from 1980 to 2020
 This is the GUI of the application:
 <img src="app_gui.png">
 
-[Click here to watch demonstrate](https://youtu.be/XHIWnEcrNj0)
-
 ## Data Sources
 This application exclusively utilizes the CSV file named ```vgsales.csv``` to analyze the data.
 
@@ -22,7 +20,7 @@ Any dependencies (packages) needed to run your program and how to run it.
 The design of this application allows users to determine how the data is visualized by selecting a value from a dropdown menu and clicking a button to generate the corresponding graph. The application also includes a progress bar to indicate that the application is functioning correctly. In the event that no value has been selected from the dropdown menu, users can still click the button to view the default graph provided by the application.
 
 This is the UML Class Diagram of the application:
-<img src="UML.png">
+<img src="uml.png">
 
 And this is the Sequence Diagram of the application:
 <img src="sequence.png">
